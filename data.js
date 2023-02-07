@@ -1,42 +1,4 @@
-// we get anime api's from Jikan, I need to request to get an api data, How? Idk how, pls know it on the next line (6:15pm feb.7)
-// lost track on finding the right line to request, but we now know HOW to do it 7:38pm , next is the what line to request
-// FINALLY, https://api.jikan.moe/v4/anime/{id}/full , I have staring at this copy paste code AND IT DOES NOT WORK THE FIRST TIME, BUT ITS ALL GOOD I AM NOT MAD JUST
-// DO this: basically that {id} has to be replaced with a Number(calling the id inside the api storage itself)
-// if DO this does not work: what I did was to copy everything before {id} and start from there(putting a number I menubar, also not all numbers work but yeah, Imma learn how to call the 'anime' itself [if possible]) 8:26pm
-const animeList = document.querySelector(".wrapper");
-
-async function main() {
-  const anime = await fetch("https://api.jikan.moe/v4/anime");
-  const animeData = await anime.json();
-  console.log(animeData);
-  animeList.innerHTML = animeData;
-  //   animeData.map((data) => dataHTML(data)).join("");
-}
-
-main();
-
-// Turns out, I AM IN BABYYYYYYYYYYYY 9:53pm (Honestly this took by this time cuz I just came back from a dinner break)
-// its within my vicinity all along https://api.jikan.moe/v4/anime
-// yeh, it does nor work, I copy pasted my working js code from the library book thing, turns out the link being fetched is wrong itself, nt
-
-function dataHTML(data) {
-  return `<div class="result__content--wrapper" onclick= idkYet()>
-                        <figure>
-                            <img src="" alt="" class="content__img">
-                        </figure>
-                        <div class="content">
-                            <h2 class="content__title">${data.name}</h2>
-                            <h3 class="content__sub-title">subtitle</h3>
-                            <p class="content__para">synopsis</p>
-                        </div>
-                    </div>`;
-}
-
 // when things get rough, go here (my last resort, I think)
-// yep, just used the last resort, idk if it will work(IT SHOULD), I hope it will(IF IT DO NOT, HMMMMMMMMMMM)
-// just reorganized some of the numberings and needed data I want to present, thanks to that mal_id: no. representing every anime with its contents, I only HAVE TO REORGANIZE IT 1 BY 1, its ma solution so no blames, I just want this to work is all PLSSSS
-
-// use my library ecommerce thing for guide
 function getAnime() {
   return new Promise((resolve) => {
     setTimeout(() => {
