@@ -3,35 +3,40 @@
 // FINALLY, https://api.jikan.moe/v4/anime/{id}/full , I have staring at this copy paste code AND IT DOES NOT WORK THE FIRST TIME, BUT ITS ALL GOOD I AM NOT MAD JUST
 // DO this: basically that {id} has to be replaced with a Number(calling the id inside the api storage itself)
 // if DO this does not work: what I did was to copy everything before {id} and start from there(putting a number I menubar, also not all numbers work but yeah, Imma learn how to call the 'anime' itself [if possible]) 8:26pm
-const animeList = document.querySelector(".wrapper");
-
+let anime;
 async function main() {
-  const anime = await fetch("https://api.jikan.moe/v4/anime");
-  const animeData = await anime.json();
-  console.log(animeData);
-  animeList.innerHTML = animeData;
-  //   animeData.map((data) => dataHTML(data)).join("");
-}
+  const animeWrapper = document.querySelector(".wrapper");
+  
+  animeWrapper.classList += ' books__loading'
+  if (!anime) {
+    animeList = await getAnime();
+  }
+  animeWrapper.classList.remove('books__loading')
+  
+  console.log(animeList);
+  // Turns out, I AM IN BABYYYYYYYYYYYY 9:53pm (Honestly this took by this time cuz I just came back from a dinner break)
+  // its within my vicinity all along https://api.jikan.moe/v4/anime
+  // yeh, it does nor work, I copy pasted my working js code from the library book thing, turns out the link being fetched is wrong itself, nt
 
-main();
-
-// Turns out, I AM IN BABYYYYYYYYYYYY 9:53pm (Honestly this took by this time cuz I just came back from a dinner break)
-// its within my vicinity all along https://api.jikan.moe/v4/anime
-// yeh, it does nor work, I copy pasted my working js code from the library book thing, turns out the link being fetched is wrong itself, nt
-
-function dataHTML(data) {
-  return `<div class="result__content--wrapper" onclick= idkYet()>
+  const dataHTML = animeList.map((anime) => {
+      return `<div class="result__content--wrapper" onclick= idkYet()>
                         <figure>
-                            <img src="" alt="" class="content__img">
+                        <img src="${anime.images.jpg.image_url}" alt="" class="content__img">
                         </figure>
                         <div class="content">
-                            <h2 class="content__title">${data.name}</h2>
+                            <h2 class="content__title">${anime.title}</h2>
                             <h3 class="content__sub-title">subtitle</h3>
                             <p class="content__para">synopsis</p>
                         </div>
                     </div>`;
+    })
+    .join("");
+    animeWrapper.innerHTML = dataHTML
 }
 
+setTimeout(() => {
+  main();
+}, 1000);
 // when things get rough, go here (my last resort, I think)
 // yep, just used the last resort, idk if it will work(IT SHOULD), I hope it will(IF IT DO NOT, HMMMMMMMMMMM)
 // just reorganized some of the numberings and needed data I want to present, thanks to that mal_id: no. representing every anime with its contents, I only HAVE TO REORGANIZE IT 1 BY 1, its ma solution so no blames, I just want this to work is all PLSSSS
@@ -42,7 +47,7 @@ function getAnime() {
     setTimeout(() => {
       resolve([
         {
-          mal_id: 1,
+          id: 1,
           url: "https://myanimelist.net/anime/1/Cowboy_Bebop",
           images: {
             jpg: {
@@ -95,7 +100,7 @@ function getAnime() {
           demographics: [],
         },
         {
-          mal_id: 2,
+          id: 2,
           url: "https://myanimelist.net/anime/5/Cowboy_Bebop__Tengoku_no_Tobira",
           images: {
             jpg: {
@@ -143,7 +148,7 @@ function getAnime() {
           demographics: [],
         },
         {
-          mal_id: 3,
+          id: 3,
           url: "https://myanimelist.net/anime/6/Trigun",
           images: {
             jpg: {
@@ -203,7 +208,7 @@ function getAnime() {
           ],
         },
         {
-          mal_id: 4,
+          id: 4,
           url: "https://myanimelist.net/anime/7/Witch_Hunter_Robin",
           images: {
             jpg: {
@@ -262,7 +267,7 @@ function getAnime() {
           demographics: [],
         },
         {
-          mal_id: 5,
+          id: 5,
           url: "https://myanimelist.net/anime/8/Bouken_Ou_Beet",
           images: {
             jpg: {
@@ -321,7 +326,7 @@ function getAnime() {
           ],
         },
         {
-          mal_id: 6,
+          id: 6,
           url: "https://myanimelist.net/anime/15/Eyeshield_21",
           images: {
             jpg: {
@@ -370,7 +375,7 @@ function getAnime() {
           ],
         },
         {
-          mal_id: 7,
+          id: 7,
           url: "https://myanimelist.net/anime/16/Hachimitsu_to_Clover",
           images: {
             jpg: {
@@ -431,7 +436,7 @@ function getAnime() {
           ],
         },
         {
-          mal_id: 8,
+          id: 8,
           url: "https://myanimelist.net/anime/17/Hungry_Heart__Wild_Striker",
           images: {
             jpg: {
@@ -492,7 +497,7 @@ function getAnime() {
           ],
         },
         {
-          mal_id: 9,
+          id: 9,
           url: "https://myanimelist.net/anime/18/Initial_D_Fourth_Stage",
           images: {
             jpg: {
@@ -545,7 +550,7 @@ function getAnime() {
           ],
         },
         {
-          mal_id: 10,
+          id: 10,
           url: "https://myanimelist.net/anime/19/Monster",
           images: {
             jpg: {
@@ -605,7 +610,7 @@ function getAnime() {
           ],
         },
         {
-          mal_id: 11,
+          id: 11,
           url: "https://myanimelist.net/anime/20/Naruto",
           images: {
             jpg: {
@@ -666,7 +671,7 @@ function getAnime() {
           ],
         },
         {
-          mal_id: 12,
+          id: 12,
           url: "https://myanimelist.net/anime/21/One_Piece",
           images: {
             jpg: {
@@ -726,7 +731,7 @@ function getAnime() {
           ],
         },
         {
-          mal_id: 13,
+          id: 13,
           url: "https://myanimelist.net/anime/22/Tennis_no_Ouji-sama",
           images: {
             jpg: {
@@ -774,7 +779,7 @@ function getAnime() {
           ],
         },
         {
-          mal_id: 14,
+          id: 14,
           url: "https://myanimelist.net/anime/23/Ring_ni_Kakero_1",
           images: {
             jpg: {
@@ -828,7 +833,7 @@ function getAnime() {
           ],
         },
         {
-          mal_id: 15,
+          id: 15,
           url: "https://myanimelist.net/anime/24/School_Rumble",
           images: {
             jpg: {
