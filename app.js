@@ -19,16 +19,16 @@ async function main() {
   // yeh, it does nor work, I copy pasted my working js code from the library book thing, turns out the link being fetched is wrong itself, nt
 
   const dataHTML = animeList.map((anime) => {
-      return `<div class="result__content--wrapper" onclick= idkYet()>
-                        <figure>
+      return `<a class="another-wrapper" href="#">
+                      <div class="content__img--wrapper">
                         <img src="${anime.images.jpg.image_url}" alt="" class="content__img">
-                        </figure>
                         <div class="content">
-                            <h2 class="content__title">${anime.title}</h2>
-                            <h3 class="content__sub-title">subtitle</h3>
-                            <p class="content__para">synopsis</p>
+                        <h2 class="content__title">${anime.title}</h2>
+                        <h3 class="content__sub-title">subtitle</h3>
+                        <div class="content__ranking">Rank ${anime.rank}</div>
                         </div>
-                    </div>`;
+                      </div>
+                  </a>`;
     })
     .join("");
     animeWrapper.innerHTML = dataHTML
