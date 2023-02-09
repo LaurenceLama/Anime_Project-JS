@@ -163,6 +163,8 @@ Animes, the main attraction, this it
 
 .content__img {
     max-width: 340px;
+    max-height: 480px;
+    min-height: 480px;
 }
 
 .container {
@@ -180,17 +182,17 @@ Animes, the main attraction, this it
     flex-direction: column;
     align-items: center;
     text-align: center;
-    margin-bottom: 24px;
-}
-
-.content__title {
+  }
+  
+  .content__title {
     font-size: 28px;
-}
-
-.content__img--wrapper {
+  }
+  
+  .content__img--wrapper {
     position: relative;
     width: 100%;
     max-width: 340px;
+    margin-bottom: 32px;
 }
 
 .content__ranking {
@@ -208,7 +210,7 @@ Loadings screeners
 
 .books {
   position: absolute;
-  left: 800px;
+  left: 49%;
 }
 
 .books__loading {

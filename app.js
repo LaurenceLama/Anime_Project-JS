@@ -19,7 +19,7 @@ async function main() {
   // yeh, it does nor work, I copy pasted my working js code from the library book thing, turns out the link being fetched is wrong itself, nt
 
   const dataHTML = animeList.map((anime) => {
-      return `<a class="another-wrapper" href="#">
+      return `<a class="another-wrapper" onclick="showUserPosts(${anime.id})" onclick="open()">
                       <div class="content__img--wrapper">
                         <img src="${anime.images.jpg.image_url}" alt="" class="content__img">
                         <div class="content">
@@ -34,9 +34,18 @@ async function main() {
     animeWrapper.innerHTML = dataHTML
 }
 
+// Link routed  to user details, how to route to a new page in vanilla javascript
+function showUserPosts(id) {
+    localStorage.setItem("id", id)
+    window.location.href = `${window.location.origin}/data.html`;
+}
+
 setTimeout(() => {
   main();
 }, 1000);
+
+
+
 // when things get rough, go here (my last resort, I think)
 // yep, just used the last resort, idk if it will work(IT SHOULD), I hope it will(IF IT DO NOT, HMMMMMMMMMMM)
 // just reorganized some of the numberings and needed data I want to present, thanks to that mal_id: no. representing every anime with its contents, I only HAVE TO REORGANIZE IT 1 BY 1, its ma solution so no blames, I just want this to work is all PLSSSS
