@@ -2,7 +2,7 @@ const postListEl = document.querySelector(".post-list");
 const id = localStorage.getItem("id");
 
 async function renderPosts() {
-  animeList = await getAnime(id);
+  animeList = await getAnime();
   // when u want to convert every element of an array into smth like html, we map
   postListEl.innerHTML = animeList.map((post) => postHTML(post)).join("");
   //why join? .join('') lets us convert an array into a string, which innerHTML can read and set. innderHTML cannot setup arrays
@@ -12,17 +12,17 @@ async function renderPosts() {
         <img src="${post.images.jpg.large_image_url}" alt="">
       </div>
       <p class="post__body">
-        Post Body
+        Post hi
       </p>
         </p>
         </div>`;
   }
 }
 
-async function onSearchChange(event) {
-  const id = event.target.value;
-  renderPosts();
-}
+// async function onSearchChange(event) {
+//   const id = event.target.value;
+//   renderPosts();
+// }
 
 
 setTimeout(() => {
@@ -31,7 +31,7 @@ setTimeout(() => {
 
 
 // use my library ecommerce thing for guide
-function getAnime(id) {
+function getAnime() {
   return new Promise((resolve) => {
     setTimeout(() => {
       resolve([

@@ -12,14 +12,14 @@ async function main() {
     animeList = await getAnime();
   }
   animeWrapper.classList.remove('books__loading')
+  // console.log(animeList);
   
-  console.log(animeList);
   // Turns out, I AM IN BABYYYYYYYYYYYY 9:53pm (Honestly this took by this time cuz I just came back from a dinner break)
   // its within my vicinity all along https://api.jikan.moe/v4/anime
   // yeh, it does nor work, I copy pasted my working js code from the library book thing, turns out the link being fetched is wrong itself, nt
 
   const dataHTML = animeList.map((anime) => {
-      return `<a class="another-wrapper" onclick="showUserPosts(${anime.id})" onclick="open()">
+      return `<a class="another-wrapper" onclick="showUserPosts(${anime.id})">
                       <div class="content__img--wrapper">
                         <img src="${anime.images.jpg.image_url}" alt="" class="content__img">
                         <div class="content">
@@ -36,8 +36,8 @@ async function main() {
 
 // Link routed  to user details, how to route to a new page in vanilla javascript
 function showUserPosts(id) {
-    localStorage.setItem("id", id)
-    window.location.href = `${window.location.origin}/data.html`;
+  localStorage.setItem("id", id)
+  window.location.href = `${window.location.origin}/data.html`;
 }
 
 setTimeout(() => {
