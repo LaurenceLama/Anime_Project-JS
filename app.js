@@ -27,7 +27,7 @@ async function main() {
   // now it works lezgoooooooooooooooooooooooo
 
   function animeHTML(anime) {
-    return `<a class="another-wrapper" onclick="showUserPosts(${anime.id})">
+    return `<a class="another-wrapper" onclick="showUserPosts(${anime.mal_id})">
                       <div class="content__img--wrapper">
                         <img src="${anime.images.jpg.image_url}" alt="" class="content__img">
                         <div class="content">
@@ -41,8 +41,8 @@ async function main() {
 }
 
 // Link routed  to user details, how to route to a new page in vanilla javascript
-function showUserPosts(id) {
-  localStorage.setItem("id", id);
+function showUserPosts(mal_id) {
+  localStorage.setItem("id", mal_id);
   window.location.href = `${window.location.origin}/data.html`;
 }
 

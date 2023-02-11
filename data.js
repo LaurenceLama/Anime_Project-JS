@@ -1,12 +1,13 @@
 const postListEl = document.querySelector(".post-list");
 const id = localStorage.getItem("id");
 
-async function renderPosts() {
-  const anime = await fetch(`https://api.jikan.moe/v4/anime`);
+async function renderPosts(id) {
+  const anime = await fetch(`https://api.jikan.moe/v4/anime/1/full`);
   const animeData = await anime.json();
-
+  console.log(animeData.data);
+  console.log(animeData.data.map((post) => postHTML(post)).join(""));
   // when u want to convert every element of an array into smth like html, we map
-  postListEl.innerHTML = animeData.data.map((post) => postHTML(post)).join("");
+  // postListEl.innerHTML = animeData.data.map((post) => postHTML(post)).join("");
   //why join? .join('') lets us convert an array into a string, which innerHTML can read and set. innderHTML cannot setup arrays
   function postHTML(post) {
     return `<div class="post">
