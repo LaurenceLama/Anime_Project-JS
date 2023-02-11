@@ -1,13 +1,15 @@
 const postListEl = document.querySelector(".post-list");
 const id = localStorage.getItem("id");
 
-async function renderPosts(id) {
-  const anime = await fetch(`https://api.jikan.moe/v4/anime/1/full`);
+async function renderPosts() {
+  const anime = await fetch(`https://api.jikan.moe/v4/anime/${id}/full`);
   const animeData = await anime.json();
   console.log(animeData.data);
-  console.log(animeData.data.map((post) => postHTML(post)).join(""));
+  // console.log(animeData.data.map((post) => postHTML(post)).join(""));
+
   // when u want to convert every element of an array into smth like html, we map
-  // postListEl.innerHTML = animeData.data.map((post) => postHTML(post)).join("");
+  postListEl.innerHTML = animeData.data.map((post) => postHTML(post)).join(""); //pretty somewhat sure this line is what causes the error, idk how to fix tho, I feel its staring at me and I cannot find it
+
   //why join? .join('') lets us convert an array into a string, which innerHTML can read and set. innderHTML cannot setup arrays
   function postHTML(post) {
     return `<div class="post">
@@ -20,8 +22,7 @@ async function renderPosts(id) {
       <p class="post__body">
         Post hi
       </p>
-
-        </div>`;
+    </div>`;
   }
 }
 
