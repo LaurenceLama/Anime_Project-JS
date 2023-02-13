@@ -1,24 +1,22 @@
 const postListEl = document.querySelector(".post-list");
 const id = localStorage.getItem("id");
 
-async function renderPosts() {
+async function renderPosts(id) {
   const anime = await fetch(`https://api.jikan.moe/v4/anime/${id}`);
   const animeData = await anime.json();
-  const animeArr = Object.entries(animeData.data);
+  const animeArr = animeData.data;
+
+  // since this logs the data I already need, I do not even need to map it(console is logging a single object which is my needed details). idc how simple it is and I still spent hours debugging it, shoutout to FSE dc community!
   console.log(animeArr);
-  // console.log(Object.values(animeData.data).map((post) => postHTML(post)).join(""));
-// kinda understood the concepts of Object.keys,entries,and values. Basically this is my object-to-array converter. However, from my understanding, the function for mapping still does not work cuz my chosen api has arrays on objects on objects on arrays(not accurate btw, but my point remains)
-// LETS TRY OTHER API'S LEZGOOOO, 
 
 
-  // when u want to convert every element of an array into smth like html, we map
-  postListEl.innerHTML = animeArr.map((post) => postHTML(post)).join(""); //pretty somewhat sure this line is what causes the error, idk how to fix tho, I feel its staring at me and I cannot find it
-
-  //why join? .join('') lets us convert an array into a string, which innerHTML can read and set. innderHTML cannot setup arrays
+  // when u want to convert 'every element'(meaning multiple values or objects) of an array into smth like html, we map. (YEH,,, WE DONT, UNMAP, NOT MAP, NO MAP  -feb. 13, 2023)
+  // postListEl.innerHTML = animeArr.map((post) => postHTML(post)).join(""); //pretty somewhat sure this line is what causes the error, idk how to fix tho, I feel its staring at me and I cannot find it. yep it IS staring right at me
+  postListEl.innerHTML = postHTML(animeArr)
   function postHTML(post) {
     return `<div class="post">
         <div class="post__title">
-        <img src="" alt="">
+        <img src="${post.images.jpg.image_url}" alt="">
       </div>
       <p class="post__title">
         ${post.title}
@@ -30,11 +28,25 @@ async function renderPosts() {
   }
 }
 
-// async function onSearchChange(event) {
-//   const id = event.target.value;
-//   renderPosts();
-// }
+async function onSearchChange(event) {
+  const id = event.target.value;
+  renderPosts(id);
+}
 
 setTimeout(() => {
-  renderPosts();
+  renderPosts(id);
 }, 1000);
+
+/** 
+ * LESSON LEARNED (SLUMP KILLER):
+ * when in slump, define problem (not the reason I got stuck)
+ * when problem defined, define the used solution to know why it is problem (the reason I got stuck, i did not define solution)
+ * when solution defined and proven as problem, I think you should know the cause of the problem 
+ * knowing the cause of problem will let us analyze the, yes, as to formulate or adjust the working-solution that is working 
+ * 
+ * NOTES
+ * my previous solution was to try all solutions I know, hoping one of it would solve it
+ * if none worked, I resort to finding other solutions, like searching, resetting, and did not analyze
+ * actually I did analyze, define problem, but DID NOT DEFINE SOLUTION TO KNOW WHY IT IS PROBLEM
+ * learn from lesson learned LEZGO
+ */

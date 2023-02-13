@@ -13,6 +13,9 @@ async function main() {
   if (!anime) {
     const anime = await fetch("https://api.jikan.moe/v4/anime");
     const animeData = await anime.json();
+    
+    // so this log shows basically an opened api data, but since the data are enclosed on an Array(or idk object, probably object), we map
+    console.log(animeData)
 
     animeListEl.innerHTML = animeData.data.map((user) => animeHTML(user)).join("");
 
@@ -32,7 +35,6 @@ async function main() {
                         <img src="${anime.images.jpg.image_url}" alt="" class="content__img">
                         <div class="content">
                         <h2 class="content__title">${anime.title}</h2>
-                        <h3 class="content__sub-title">subtitle</h3>
                         <div class="content__ranking">Rank ${anime.rank}</div>
                         </div>
                       </div>
@@ -48,8 +50,8 @@ function showUserPosts(mal_id) {
 
 setTimeout(() => {
   main();
-}, 1000);
+}, 100);
 
-// when things get rough, go here (my last resort, I think)
-// yep, just used the last resort, idk if it will work(IT SHOULD), I hope it will(IF IT DO NOT, HMMMMMMMMMMM)
-// just reorganized some of the numberings and needed data I want to present, thanks to that mal_id: no. representing every anime with its contents, I only HAVE TO REORGANIZE IT 1 BY 1, its ma solution so no blames, I just want this to work is all PLSSSS
+//  when things get rough, go here (my last resort, I think)
+//  yep, just used the last resort, idk if it will work(IT SHOULD), I hope it will(IF IT DO NOT, HMMMMMMMMMMM)
+//  just reorganized some of the numberings and needed data I want to present, thanks to that mal_id: no. representing every anime with its contents, I only HAVE TO REORGANIZE IT 1 BY 1, its ma solution so no blames, I just want this to work is all PLSSSS

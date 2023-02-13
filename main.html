@@ -36,28 +36,48 @@
     <section id="search__results">
       <div class="row">
         <div class="search__result--banner">
-          <h2 class="search__result--title">Anime Lists:</h1>
-            <div class="search__slider--wrapper">
-              <h2 class="slider__title">Alphabetical directory</h2>
-              <div class="slider-wrapper">
-                <div class="slider">
-                  <div class="slider__runway">
-                    <div class="slider__bar"></div>
-                    <div class="slider__button--wrapper left">
-                      <div class="slider__button"></div>
-                    </div>
-                    <div class="slider__button--wrapper right">
-                      <div class="slider__button"></div>
-                    </div>
-                    <div class="slider__stop--wrapper">
-                      <div class="slider__stop slider__marks-stop"></div>
-                      <div class="slider__stop slider__marks-stop"></div>
-                    </div>
-                    <div class="slider__marks"></div>
-                  </div>
-                </div>
-              </div>
+          <div class="search__filter--wrapper">
+            <h2 class="search__result--title">Sort Anime:</h1>
+              <select id="filter" onchange="sortAnime(event)">
+                <option value="" disabled selected>sort</option>
+                <option value="alphabetical">A - Z</option>
+                <option value="non-alphabetical">Z - A</option>
+                <option value="Rank">Ranking</option>
+              </select>
             </div>
+            <div class="search__genre--wrapper">
+              <h2 class="genre__title">Filter:</h2>
+              <ul class="genre__lists">
+                <li class="genre__list">
+                  <a href="#" class="genre__picker">
+                    <h3 class="genre">Action</h3>
+                  </a>
+                </li>
+                <li class="genre__list">
+                  <a href="#" class="genre__picker">
+                    <h3 class="genre">Sci-fi</h3>
+                  </a>
+                </li>
+                <li class="genre__list">
+                  <a href="#" class="genre__picker">
+                    <h3 class="genre">Sports</h3>
+                  </a>
+                </li>
+                <li class="genre__list">
+                  <a href="#" class="genre__picker">
+                    <h3 class="genre">Romance</h3>
+                  </a>
+                </li>
+                <li class="genre__list">
+                  <a href="#" class="genre__picker">
+                    <h3 class="genre">Comedy</h3>
+                  </a>
+                </li>
+              </ul>
+            </div>
+          </div>
+        <div class="result__title--wrapper">
+          <h2 class="search__result--title">Anime Lists:</h1>
         </div>
         <div class="search__result--content">
           <div class="container">
