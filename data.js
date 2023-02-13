@@ -41,7 +41,7 @@ setTimeout(() => {
  * LESSON LEARNED (SLUMP KILLER):
  * when in slump, define problem (not the reason I got stuck)
  * when problem defined, define the used solution to know why it is problem (the reason I got stuck, i did not define solution)
- * when solution defined and proven as problem, I think you should know the cause of the problem 
+ * when solution defined and proven as problem, I think you should know the cause of the PROBLEM(solution defined n proven as problem)
  * knowing the cause of problem will let us analyze the, yes, as to formulate or adjust the working-solution that is working 
  * 
  * NOTES

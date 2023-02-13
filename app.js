@@ -6,7 +6,7 @@
 let anime;
 const animeListEl = document.querySelector(".wrapper");
 
-async function main() {
+async function renderAnime(sort) {
   const animeWrapper = document.querySelector(".wrapper");
 
   animeWrapper.classList += " books__loading";
@@ -14,16 +14,26 @@ async function main() {
     const anime = await fetch("https://api.jikan.moe/v4/anime");
     const animeData = await anime.json();
     
-    // so this log shows basically an opened api data, but since the data are enclosed on an Array(or idk object, probably object), we map
-    console.log(animeData)
 
-    animeListEl.innerHTML = animeData.data.map((user) => animeHTML(user)).join("");
-
+  // Sort function
+  // so when sorting functions, line orders matter, my plan was to put it below everything but still inside renderAnime, but I have analyzed(with some luck, or just TnE) that if this function goes below the animeHTML, it will not go according to yeah
+  if (sort === "Rank") {
+    animeData.data.sort((a, b) => a.rank - b.rank);
+  }
+  else if (sort === "alphabetical") {
+    // animeData.data.sort((a, b) => a.title - b.title);
+    console.log(animeData.data.sort((a, b) => a.title - b.title))
+  }
+  
+  // so this log shows basically an opened api data, but since the data are enclosed on an Array(or idk object, probably object), we map
+  // console.log(animeData)
+  
+  animeListEl.innerHTML = animeData.data.map((user) => animeHTML(user)).join("");
+  
     //   one thing I have realized in this wasting times is when there is error and console tells it is on the innerHTML parent, its not there. It is mostly from the faulty website url. And knowing that not all websites work, probably means that MAYBE .map is not always the answer. Or maybe the request thing needs to be done which I do not know of.
     //   console.log(animeData.data) IMMA END THIS SLUMP, .data was all it took just to make this project longer DAMN OK IM GOOD im good, btw that data depends on the array name to be your chosen so it may be something else
   }
   animeWrapper.classList.remove("books__loading");
-  // console.log(animeList);
 
   // Turns out, I AM IN BABYYYYYYYYYYYY 9:53pm (Honestly this took by this time cuz I just came back from a dinner break)
   // its within my vicinity all along https://api.jikan.moe/v4/anime
@@ -35,11 +45,16 @@ async function main() {
                         <img src="${anime.images.jpg.image_url}" alt="" class="content__img">
                         <div class="content">
                         <h2 class="content__title">${anime.title}</h2>
-                        <div class="content__ranking">Rank ${anime.rank}</div>
+                        <div class="content__ranking">Rank: ${anime.rank}</div>
                         </div>
                       </div>
                   </a>`;
   }
+}
+
+async function sortAnime(event) {
+  const sort = event.target.value
+  renderAnime(sort)
 }
 
 // Link routed  to user details, how to route to a new page in vanilla javascript
@@ -49,7 +64,7 @@ function showUserPosts(mal_id) {
 }
 
 setTimeout(() => {
-  main();
+  renderAnime();
 }, 100);
 
 //  when things get rough, go here (my last resort, I think)
