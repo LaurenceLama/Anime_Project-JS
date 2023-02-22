@@ -46,6 +46,10 @@ li {
   list-style-type: none;
 }
 
+select {
+  cursor: pointer;
+}
+
 h1 {
   font-size: 24px;
   font-family: "Special Elite", cursive;

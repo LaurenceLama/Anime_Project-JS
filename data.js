@@ -18,12 +18,18 @@ async function renderPosts(id) {
         <div class="post__title">
         <img src="${post.images.jpg.image_url}" alt="">
       </div>
-      <p class="post__title">
+      <h1 class="post__title">
         ${post.title}
-      </p>
-      <p class="post__body">
-        ${post.episodes}
-      </p>
+      </h1>
+      <h2 class="post__episodes">
+        Episodes: ${post.episodes}
+      </h2>
+      <h2 class="post__score">
+        Score: ${post.score}
+      </h2>
+      <h3 class="post__synopsis">
+        background story: ${post.synopsis}
+      </h3>
     </div>`;
   }
 }

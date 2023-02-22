@@ -6,7 +6,7 @@
 let anime;
 const animeListEl = document.querySelector(".wrapper");
 
-async function renderAnime(sort) {
+async function renderAnime(sorting) {
   const animeWrapper = document.querySelector(".wrapper");
 
   animeWrapper.classList += " books__loading";
@@ -17,14 +17,28 @@ async function renderAnime(sort) {
 
   // Sort function
   // so when sorting functions, line orders matter, my plan was to put it below everything but still inside renderAnime, but I have analyzed(with some luck, or just TnE) that if this function goes below the animeHTML, it will not go according to yeah
-  if (sort === "Rank") {
+  if (sorting === "Rank") {
     animeData.data.sort((a, b) => a.rank - b.rank);
   }
-  else if (sort === "alphabetical") {
-    // animeData.data.sort((a, b) => a.title - b.title);
-    console.log(animeData.data.sort((a, b) => a.title - b.title))
+  else if (sorting === "alphabetical") {
+    // animeData.data.sort((a, b) => a.title - b.title); deduced that with score as the value, concludes us that sorting will only sort values and NOT values in a string
+    animeData.data.sort((a, b) => a.score - b.score)
   }
-  
+  else if (sorting === "non-alphabetical") {
+    // animeData.data.sort((a, b) => a.title - b.title); deduced that with score as the value, concludes us that sorting will only sort values and NOT values in a string
+    animeData.data.sort((a, b) => b.episodes - a.episodes)
+  }
+  // else if (sorting === "non-alphabetical") { // could not (or just got lazy) to debug how to sort string values
+  //   animeData.data.title.sort()
+  // }
+
+  // Filter function (this is gonna cost me too much time, mb, college things get in the way rn)
+  // if (sorting === 'action') {
+  //   animeData.data.filter((element) => element !== 'action')
+  // }
+
+
+
   // so this log shows basically an opened api data, but since the data are enclosed on an Array(or idk object, probably object), we map
   // console.log(animeData)
   
