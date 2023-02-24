@@ -9,3 +9,117 @@
   color: white;
 }
 
+/*
+
+GENERICS
+
+*/
+
+a {
+  text-decoration: none;
+  cursor: pointer;
+}
+
+h1 {
+  color: rgb(99, 150, 218);
+}
+
+button {
+  text-decoration: none;
+  border: none;
+}
+
+body {
+  max-width: 100vw;
+}
+
+img {
+  width: 100%;
+}
+
+button {
+  cursor: pointer;
+}
+
+li {
+  list-style-type: none;
+}
+
+select {
+  cursor: pointer;
+}
+
+h1 {
+  font-size: 24px;
+  font-family: "Special Elite", cursive;
+}
+
+.transition {
+  transition: all 360ms ease-in-out;
+}
+
+/* 
+
+Navigationalitisizeracecars
+
+*/
+
+#nav__bar {
+  display: flex;
+  width: 100%;
+}
+
+nav {
+  width: 100%;
+  max-width: 1200px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin: 0 auto;
+  padding: 20px 40px;
+  border-bottom: 4px solid white;
+  border-radius: 30%;
+}
+
+.nav__logo--anchor {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#nav__logo {
+  max-width: 140px;
+  transform: scale(0.8);
+  border-radius: 50%;
+}
+
+.post__back--text {
+  font-size: 24px;
+  color: rgb(99, 150, 218);
+}
+
+
+/*
+
+DESCRIPTIONISMS
+
+*/
+
+#description {
+  padding: 12px 24px;
+}
+
+.container {
+  display: flex;
+  margin: 36px 0;
+}
+
+.post__title {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.post__title--details {
+  padding-left: 24px;
+}

@@ -94,12 +94,6 @@ nav {
   border-radius: 50%;
 }
 
-.nav__logo--wrapper {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-
 input,
 .search__btn {
   background-color: transparent;

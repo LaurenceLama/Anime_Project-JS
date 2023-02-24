@@ -1,45 +1,50 @@
 <!DOCTYPE html>
 <html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Contints</title>
+    <link rel="stylesheet" href="data.css" />
+  </head>
 
-<head>
-  <meta charset="UTF-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Contints</title>
-  <link rel="stylesheet" href="data.css">
-</head>
-
-<body>
-  <div class="post__search">
-    <a href="/main.html">
-      <button>← Back</button>
-    </a>
-    <!-- <div class="post__search--container"> do not need this right now
+  <body>
+    <section id="nav__bar">
+      <nav>
+        <a href="/index.html" class="nav__logo--anchor">
+          <img src="/some things/images.jpg" alt="" id="nav__logo" />
+          <h1>Akneemei</h1>
+        </a>
+        <div class="post__back">
+          <a href="/main.html">
+            <button class="post__back--text">
+              <span class="arrow__hover--effect">←</span> Back
+            </button>
+          </a>
+          <!-- <div class="post__search--container"> do not need this right now
       <label class="post__search--label">
         Search by Id
       </label>
       <input type="number" placeholder="numver" onchange="onSearchChange(event)">
-    </div>
-  </div> -->
-  <div class="post-list">
-    <div class="post">
-      <div class="post__title">
-        <img src="" alt="">
+    </div> -->
+        </div>
+      </nav>
+    </section>
+    <section id="description">
+      <div class="container">
+        <div class="post-list">
+          <div class="post">
+            <div class="post__title">
+              <img src="" alt="" />
+            </div>
+            <h1 class="post__episodes">episodes</h1>
+            <h1 class="post__score">score</h1>
+            <h2 class="post__synopsis">background story</h2>
+          </div>
+        </div>
       </div>
-      <h1 class="post__episodes">
-        episodes
-      </h1>
-      <h1 class="post__score">
-        score
-      </h1>
-      <h2 class="post__synopsis">
-        background story
-      </h2>
-      
-    </div>
-  </div>
-  
-  <script src="data.js"></script>
-</body>
+    </section>
 
+    <script src="data.js"></script>
+  </body>
 </html>

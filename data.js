@@ -15,20 +15,18 @@ async function renderPosts(id) {
   postListEl.innerHTML = postHTML(animeArr)
   function postHTML(post) {
     return `<div class="post">
-        <div class="post__title">
-        <img src="${post.images.jpg.image_url}" alt="">
+      <div class="post__title">
+        <figure class="anime__post--wrapper">
+          <img src="${post.images.jpg.image_url}" alt="" id="anime__post--img">
+        </figure>
+        <div class="post__title--details">
+          <h1 class="post__title">${post.title}</h1>
+          <h2 class="post__episodes">Episodes: ${post.episodes}</h2>
+          <h2 class="post__score">Score: ${post.score}</h2>
+        </div>
       </div>
-      <h1 class="post__title">
-        ${post.title}
-      </h1>
-      <h2 class="post__episodes">
-        Episodes: ${post.episodes}
-      </h2>
-      <h2 class="post__score">
-        Score: ${post.score}
-      </h2>
       <h3 class="post__synopsis">
-        background story: ${post.synopsis}
+        Background story: ${post.synopsis}
       </h3>
     </div>`;
   }
