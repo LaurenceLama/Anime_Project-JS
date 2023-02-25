@@ -307,14 +307,46 @@ RESPONSIVILINESS
 */
 
 @media (max-width: 1200px) {
+  .another-wrapper {
+    width: calc(100% / 2);
+  }
 
+  nav {
+    margin: 0 40px;
+  }
 }
 
-@media (max-width: 930px) {
+@media (max-width: 768px) {
+  .header__search-bar--wrapper {
+    max-width: 260px;
+  }
+
+  .result__title--wrapper {
+    padding: 0;
+  }
+
+  .search__result--title,
+  .sort__result--title {
+    font-size: 36px;
+  }
 }
 
-@media (max-width: 730px) {
-}
+@media (max-width: 480px) {
+  nav {
+    margin: 0 20px;
+  }
 
-@media (max-width: 640px) {
+  input,
+  button,
+  .search__result--title {
+    display: none;
+  }
+
+  .nav__logo--anchor {
+    margin-left: 30%;
+  }
+
+  .another-wrapper {
+    width: 100%;
+  }
 }

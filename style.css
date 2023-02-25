@@ -197,6 +197,10 @@ RESPONSIVILINESS
   #nav__bar {
     padding: 0 32px;
   }
+  
+  .header__row {
+    padding-right: 0;
+  }
 }
 
 @media (max-width: 930px) {
@@ -226,7 +230,15 @@ RESPONSIVILINESS
     margin-left: 150px;
   }
 
-  .header__row {
-    padding-right: 30px;
+}
+
+@media (max-width: 480px) { 
+  .nav__logo--wrapper {
+    margin-left: 100px;
+  }
+
+
+  .header__link--anchor {
+    font-size: 20px;
   }
 }

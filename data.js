@@ -27,7 +27,7 @@ function postHTML(post) {
       </div>
     </div>
     <h3 class="post__synopsis">
-      Background story: ${post.synopsis}
+      <span class="color-blue">Background story:</span> ${post.synopsis}
     </h3>
     
   </div>`;
