@@ -186,18 +186,47 @@ HEADERINGS E FFECTS
   box-shadow: 0 2px 24px rgb(99, 150, 218);
 }
 
+
 /*
 
-
-
-
-
-
-main.html CSS below
-
-
-
-
-
+RESPONSIVILINESS
 
 */
+
+@media (max-width: 1200px) {
+  #nav__bar {
+    padding: 0 32px;
+  }
+}
+
+@media (max-width: 930px) {
+  input {
+    max-width: 360px;
+  }
+
+  .search-bar--input {
+    display: flex;
+    justify-content: flex-end;
+  }
+}
+
+@media (max-width: 730px) {
+  input {
+    max-width: 300px;
+  }
+}
+
+@media (max-width: 640px) {
+  input,
+  button {
+    display: none;
+  }
+
+  .nav__logo--wrapper {
+    margin-left: 150px;
+  }
+
+  .header__row {
+    padding-right: 30px;
+  }
+}

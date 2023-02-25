@@ -55,10 +55,10 @@ async function renderAnime(sorting) {
 
   function animeHTML(anime) {
     return `<a class="another-wrapper" onclick="showUserPosts(${anime.mal_id})">
-                      <div class="content__img--wrapper">
+                      <div class="content__img--wrapper transition">
                         <img src="${anime.images.jpg.image_url}" alt="" class="content__img">
                         <div class="content">
-                        <h2 class="content__title">${anime.title}</h2>
+                        <h2 class="content__title transition">${anime.title}</h2>
                         <div class="content__ranking">Rank: ${anime.rank}</div>
                         </div>
                       </div>

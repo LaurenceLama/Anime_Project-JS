@@ -1,4 +1,5 @@
 @import url("https://fonts.googleapis.com/css2?family=Kulim+Park:wght@300;400;600;700&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Special+Elite&display=swap");
 
 * {
   padding: 0;
@@ -95,9 +96,13 @@ nav {
 
 .post__back--text {
   font-size: 24px;
+  font-weight: 700;
   color: rgb(99, 150, 218);
 }
 
+.post__back--text:hover .arrow__hover--effect {
+  transform: scale(1.5);
+}
 
 /*
 
@@ -106,20 +111,65 @@ DESCRIPTIONISMS
 */
 
 #description {
-  padding: 12px 24px;
+  padding: 36px 24px;
 }
 
 .container {
-  display: flex;
   margin: 36px 0;
 }
 
-.post__title {
+.post__wrapper {
   display: flex;
   justify-content: center;
   align-items: center;
+  margin-bottom: 40px;
 }
 
 .post__title--details {
   padding-left: 24px;
+  display: flex;
+  flex-direction: column;
+}
+
+.post__title,
+.post__episodes,
+.post__score {
+  padding-bottom: 32px;
+  margin-left: 24px;
+}
+
+.post__title {
+  font-size: 56px;
+}
+
+.post__episodes,
+.post__score {
+  font-size: 32px;
+  font-weight: 600;
+}
+
+.post__synopsis {
+  font-size: 24px;
+  font-weight: 400;
+  padding: 0 128px;
+  text-align: justify;
+}
+
+/*
+
+RESPONSIVILINESS
+
+*/
+
+@media (max-width: 1200px) {
+
+}
+
+@media (max-width: 930px) {
+}
+
+@media (max-width: 730px) {
+}
+
+@media (max-width: 640px) {
 }

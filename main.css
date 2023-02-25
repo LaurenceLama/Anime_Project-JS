@@ -22,7 +22,7 @@ a {
 }
 
 h1 {
-    color: rgb(99, 150, 218);
+  color: rgb(99, 150, 218);
 }
 
 button {
@@ -46,8 +46,16 @@ li {
   list-style-type: none;
 }
 
+.transition {
+  transition: all 360ms ease-in-out;
+}
+
 select {
   cursor: pointer;
+}
+
+select:hover {
+  transform: scale(1.05);
 }
 
 h1 {
@@ -83,9 +91,9 @@ nav {
 }
 
 .nav__logo--anchor {
-    display: flex;
-    justify-content: center;
-    align-items: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 #nav__logo {
@@ -125,6 +133,7 @@ input {
 
 ::placeholder {
   color: white;
+  font-weight: 300;
 }
 
 /*
@@ -148,56 +157,108 @@ Animes, the main attraction, this it
 
 */
 
-.search__result--content {
-    position: relative;
+.sort__result--content {
+  position: relative;
 }
 
-.search__result--banner {
-    width: 100%;
-    padding: 80px 0;
-    display: flex;
-    justify-content: space-around;
-    align-items: center;
-}
-
-.content__img {
-    max-width: 340px;
-    max-height: 480px;
-    min-height: 480px;
+.sort__result--banner {
+  width: 100%;
+  padding: 88px 0;
 }
 
 .container {
-    margin: 0 40px;
+  margin: 0 40px;
 }
 
 .wrapper {
-    display: flex;
-    flex-wrap: wrap;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+
+.search__result--content {
+  display: flex;
+  align-items: center;
+  text-align: center;
+}
+
+.search__result--wrapper {
+  display: flex;
 }
 
 .another-wrapper {
-    width: calc(100%/3);
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    text-align: center;
-  }
-  
-  .content__title {
-    font-size: 28px;
-  }
-  
-  .content__img--wrapper {
-    position: relative;
-    width: 100%;
-    max-width: 340px;
-    margin-bottom: 32px;
+  width: calc(100% / 3);
+  display: flex;
+  justify-content: center;
+}
+
+.result__title--wrapper {
+  padding: 0 200px;
+  display: flex;
+  justify-content: space-around;
+}
+
+.sort__result--title {
+  font-size: 36px;
+  font-weight: 400;
+  margin-bottom: 12px;
+}
+
+.search__result--title {
+  font-size: 40px;
+  font-weight: 400;
+  margin-bottom: 12px;
+}
+
+#sort {
+  font-size: 18px;
+  color: rgb(99, 150, 218);
+  box-shadow: 0 4px 32px white;
+  border-radius: 20px;
+  padding: 8px;
+}
+
+#sort:focus {
+  box-shadow: 0 4px 32px rgb(99, 150, 218);
+  transform: scale(1.05);
+}
+
+.content__img {
+  max-width: 340px;
+  max-height: 480px;
+  min-height: 480px;
+}
+
+.content__title {
+  font-size: 28px;
+  font-weight: 700;
+  text-align: center;
+  padding: 4px;
+}
+
+.content__img--wrapper {
+  position: relative;
+  width: 100%;
+  max-width: 340px;
+  margin-bottom: 32px;
+}
+
+.content__img--wrapper:hover {
+  transform: scale(0.95);
+  box-shadow: 0 2px 40px rgb(140, 188, 252);
+}
+
+.content__img--wrapper:hover .content__title {
+  color: rgb(140, 188, 252);
 }
 
 .content__ranking {
-    position: absolute;
-    left: 0;   
-    top: 0; 
+  position: absolute;
+  left: 0;
+  top: 0;
+  font-size: 24px;
+  font-weight: 600;
+  color: rgb(140, 188, 252);
 }
 
 
@@ -214,7 +275,7 @@ Loadings screeners
 
 .books__loading {
   font-size: 60px;
-  color: #7342d6;
+  color: white;
 }
 
 .books__loading--spinner {
@@ -237,4 +298,23 @@ Loadings screeners
   100% {
     transform: rotate(360deg);
   }
+}
+
+/*
+
+RESPONSIVILINESS
+
+*/
+
+@media (max-width: 1200px) {
+
+}
+
+@media (max-width: 930px) {
+}
+
+@media (max-width: 730px) {
+}
+
+@media (max-width: 640px) {
 }
